@@ -1,0 +1,10 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+data/
+*.pt
+*.pth
+*.png
+*.npz
+*.json
+.streamlit/

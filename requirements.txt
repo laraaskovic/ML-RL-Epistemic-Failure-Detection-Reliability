@@ -1,0 +1,7 @@
+﻿torch==2.2.1
+torchvision==0.17.1
+scikit-learn==1.4.0
+matplotlib==3.8.2
+numpy==1.26.4
+streamlit==1.30.0
+pillow==10.2.0
