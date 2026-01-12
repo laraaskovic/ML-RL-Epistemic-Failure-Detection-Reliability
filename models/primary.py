@@ -26,6 +26,8 @@ class PrimaryCNN(nn.Module):
         hidden = F.relu(self.fc1(x))
         logits = self.fc2(hidden)
 
+
+        #allows for more inputs for the auditor nn
         if capture:
             pooled1 = F.adaptive_avg_pool2d(a1, 1).flatten(1)
             pooled2 = F.adaptive_avg_pool2d(a2, 1).flatten(1)
