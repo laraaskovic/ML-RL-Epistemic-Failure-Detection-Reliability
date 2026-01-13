@@ -16,8 +16,7 @@ Data and Corruptions
 --------------------
 - Dataset: torchvision MNIST (60k train / 10k test) with per-channel standardization (mean 0.1307, std 0.3081).
 - Corruptions sampled at load time with 0.7–0.8 probability: `rotate` (20–80 deg bilinear), `noise` (Gaussian, sigma 0.3–0.8), `occlude` (zero mask 6–18 px radius), `shift` (integer grid shift up to 3 px). Remaining samples are clean.
-- Corruptions are applied on the fly; severity is sampled uniformly in [0,1] and logged alongside each example for later analysis.
-- Latents use normalized tensors; demo corruption controls reuse the same primitives for exact parity with the training pipeline.
+- Corruptions are applied by user; severity is sampled uniformly in [0,1] and logged alongside each example for later analysis.
 
 Training Pipeline
 -----------------
