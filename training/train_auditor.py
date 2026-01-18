@@ -10,9 +10,6 @@ from sklearn.metrics import roc_auc_score
 from torch import optim
 from torch.utils.data import DataLoader, TensorDataset
 
-
-
-
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
@@ -131,6 +128,7 @@ def main():
     train_loader = DataLoader(train_data, batch_size=128, shuffle=True)
     val_loader = DataLoader(val_data, batch_size=128, shuffle=False)
 
+    #train auditor
     auditor = train_auditor_model(
         train_loader, val_loader, input_dim=primary.latent_dim, device=device, epochs=args.epochs
     )
@@ -174,7 +172,6 @@ def main():
     plot_latent_pca(latents.numpy(), failure_labels, auditor_scores, Path("visualization/latent_pca.png"))
 
     print(f"auditor ROC-AUC {auditor_auc:.3f} vs softmax {softmax_auc:.3f}")
-
 
 if __name__ == "__main__":
     main()
